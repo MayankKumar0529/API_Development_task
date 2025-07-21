@@ -1,0 +1,445 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "KPA_form data",
+    "contact": {}
+  },
+  "host": "railops-uat-api.biputri.com",
+  "basePath": "/",
+  "tags": [],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/api/forms/bogie-checksheet": {
+      "post": {
+        "summary": "https://railops-uat-api.biputri.com/api/forms/bogie-checksheet",
+        "description": "https://railops-uat-api.biputri.com/api/forms/bogie-checksheet",
+        "operationId": "httpsRailopsUatApiBiputriComApiFormsBogieChecksheet",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/body"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "201 Created",
+            "schema": {
+              "$ref": "#/definitions/inline_response_201"
+            }
+          }
+        }
+      }
+    },
+    "/api/forms/wheel-specifications": {
+      "get": {
+        "summary": "https://railops-uat-api.biputri.com/api/forms/wheel-specifications (GET with filters)",
+        "description": "https://railops-uat-api.biputri.com/api/forms/wheel-specifications (GET with filters)",
+        "operationId": "httpsRailopsUatApiBiputriComApiFormsWheelSpecificationsGetWithFilters",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "formNumber",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "submittedBy",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "submittedDate",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 OK - Filtered Results",
+            "schema": {
+              "$ref": "#/definitions/inline_response_200"
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "https://railops-uat-api.biputri.com/api/forms/wheel-specifications",
+        "description": "https://railops-uat-api.biputri.com/api/forms/wheel-specifications",
+        "operationId": "httpsRailopsUatApiBiputriComApiFormsWheelSpecifications",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/body_1"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "201 Created",
+            "schema": {
+              "$ref": "#/definitions/inline_response_201_1"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "body": {
+      "type": "object",
+      "properties": {
+        "bmbcChecksheet": {
+          "$ref": "#/definitions/apiformsbogiechecksheet_bmbcChecksheet"
+        },
+        "bogieChecksheet": {
+          "$ref": "#/definitions/apiformsbogiechecksheet_bogieChecksheet"
+        },
+        "bogieDetails": {
+          "$ref": "#/definitions/apiformsbogiechecksheet_bogieDetails"
+        },
+        "formNumber": {
+          "type": "string",
+          "example": "BOGIE-2025-001"
+        },
+        "inspectionBy": {
+          "type": "string",
+          "example": "user_id_456"
+        },
+        "inspectionDate": {
+          "type": "string",
+          "example": "2025-07-03"
+        }
+      }
+    },
+    "inline_response_200_data": {
+      "type": "object",
+      "properties": {
+        "fields": {
+          "$ref": "#/definitions/inline_response_200_fields"
+        },
+        "formNumber": {
+          "type": "string",
+          "example": "WHEEL-2025-001"
+        },
+        "submittedBy": {
+          "type": "string",
+          "example": "user_id_123"
+        },
+        "submittedDate": {
+          "type": "string",
+          "example": "2025-07-03"
+        }
+      }
+    },
+    "inline_response_201_1_data": {
+      "type": "object",
+      "properties": {
+        "formNumber": {
+          "type": "string",
+          "example": "WHEEL-2025-001"
+        },
+        "status": {
+          "type": "string",
+          "example": "Saved"
+        },
+        "submittedBy": {
+          "type": "string",
+          "example": "user_id_123"
+        },
+        "submittedDate": {
+          "type": "string",
+          "example": "2025-07-03"
+        }
+      }
+    },
+    "body_1": {
+      "type": "object",
+      "properties": {
+        "fields": {
+          "$ref": "#/definitions/apiformswheelspecifications_fields"
+        },
+        "formNumber": {
+          "type": "string",
+          "example": "WHEEL-2025-001"
+        },
+        "submittedBy": {
+          "type": "string",
+          "example": "user_id_123"
+        },
+        "submittedDate": {
+          "type": "string",
+          "example": "2025-07-03"
+        }
+      }
+    },
+    "apiformsbogiechecksheet_bogieChecksheet": {
+      "type": "object",
+      "properties": {
+        "axleGuide": {
+          "type": "string",
+          "example": "Worn"
+        },
+        "bogieFrameCondition": {
+          "type": "string",
+          "example": "Good"
+        },
+        "bolster": {
+          "type": "string",
+          "example": "Good"
+        },
+        "bolsterSuspensionBracket": {
+          "type": "string",
+          "example": "Cracked"
+        },
+        "lowerSpringSeat": {
+          "type": "string",
+          "example": "Good"
+        }
+      }
+    },
+    "inline_response_200_fields": {
+      "type": "object",
+      "properties": {
+        "condemningDia": {
+          "type": "string",
+          "example": "825 (800-900)"
+        },
+        "lastShopIssueSize": {
+          "type": "string",
+          "example": "837 (800-900)"
+        },
+        "treadDiameterNew": {
+          "type": "string",
+          "example": "915 (900-1000)"
+        },
+        "wheelGauge": {
+          "type": "string",
+          "example": "1600 (+2,-1)"
+        }
+      }
+    },
+    "apiformswheelspecifications_fields": {
+      "type": "object",
+      "properties": {
+        "axleBoxHousingBoreDia": {
+          "type": "string",
+          "example": "280 (+0.030/+0.052)"
+        },
+        "bearingSeatDiameter": {
+          "type": "string",
+          "example": "130.043 TO 130.068"
+        },
+        "condemningDia": {
+          "type": "string",
+          "example": "825 (800-900)"
+        },
+        "intermediateWWP": {
+          "type": "string",
+          "example": "20 TO 28"
+        },
+        "lastShopIssueSize": {
+          "type": "string",
+          "example": "837 (800-900)"
+        },
+        "rollerBearingBoreDia": {
+          "type": "string",
+          "example": "130 (+0.0/-0.025)"
+        },
+        "rollerBearingOuterDia": {
+          "type": "string",
+          "example": "280 (+0.0/-0.035)"
+        },
+        "rollerBearingWidth": {
+          "type": "string",
+          "example": "93 (+0/-0.250)"
+        },
+        "treadDiameterNew": {
+          "type": "string",
+          "example": "915 (900-1000)"
+        },
+        "variationSameAxle": {
+          "type": "string",
+          "example": "0.5"
+        },
+        "variationSameBogie": {
+          "type": "string",
+          "example": "5"
+        },
+        "variationSameCoach": {
+          "type": "string",
+          "example": "13"
+        },
+        "wheelDiscWidth": {
+          "type": "string",
+          "example": "127 (+4/-0)"
+        },
+        "wheelGauge": {
+          "type": "string",
+          "example": "1600 (+2,-1)"
+        },
+        "wheelProfile": {
+          "type": "string",
+          "example": "29.4 Flange Thickness"
+        }
+      }
+    },
+    "apiformsbogiechecksheet_bmbcChecksheet": {
+      "type": "object",
+      "properties": {
+        "adjustingTube": {
+          "type": "string",
+          "example": "DAMAGED"
+        },
+        "cylinderBody": {
+          "type": "string",
+          "example": "WORN OUT"
+        },
+        "pistonTrunnion": {
+          "type": "string",
+          "example": "GOOD"
+        },
+        "plungerSpring": {
+          "type": "string",
+          "example": "GOOD"
+        }
+      }
+    },
+    "inline_response_201": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/inline_response_201_data"
+        },
+        "message": {
+          "type": "string",
+          "example": "Bogie checksheet submitted successfully."
+        },
+        "success": {
+          "type": "boolean",
+          "example": true
+        }
+      }
+    },
+    "apiformsbogiechecksheet_bogieDetails": {
+      "type": "object",
+      "properties": {
+        "bogieNo": {
+          "type": "string",
+          "example": "BG1234"
+        },
+        "dateOfIOH": {
+          "type": "string",
+          "example": "2025-07-01"
+        },
+        "deficitComponents": {
+          "type": "string",
+          "example": "None"
+        },
+        "incomingDivAndDate": {
+          "type": "string",
+          "example": "NR / 2025-06-25"
+        },
+        "makerYearBuilt": {
+          "type": "string",
+          "example": "RDSO/2018"
+        }
+      }
+    },
+    "inline_response_201_data": {
+      "type": "object",
+      "properties": {
+        "formNumber": {
+          "type": "string",
+          "example": "BOGIE-2025-001"
+        },
+        "inspectionBy": {
+          "type": "string",
+          "example": "user_id_456"
+        },
+        "inspectionDate": {
+          "type": "string",
+          "example": "2025-07-03"
+        },
+        "status": {
+          "type": "string",
+          "example": "Saved"
+        }
+      }
+    },
+    "inline_response_200": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "example": [
+            {
+              "fields": {
+                "condemningDia": "825 (800-900)",
+                "lastShopIssueSize": "837 (800-900)",
+                "treadDiameterNew": "915 (900-1000)",
+                "wheelGauge": "1600 (+2,-1)"
+              },
+              "formNumber": "WHEEL-2025-001",
+              "submittedBy": "user_id_123",
+              "submittedDate": "2025-07-03"
+            }
+          ],
+          "items": {
+            "$ref": "#/definitions/inline_response_200_data"
+          }
+        },
+        "message": {
+          "type": "string",
+          "example": "Filtered wheel specification forms fetched successfully."
+        },
+        "success": {
+          "type": "boolean",
+          "example": true
+        }
+      }
+    },
+    "inline_response_201_1": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/inline_response_201_1_data"
+        },
+        "message": {
+          "type": "string",
+          "example": "Wheel specification submitted successfully."
+        },
+        "success": {
+          "type": "boolean",
+          "example": true
+        }
+      }
+    }
+  }
+}

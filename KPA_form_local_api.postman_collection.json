@@ -1,0 +1,119 @@
+{
+  "info": {
+    "_postman_id": "8db1d9c4-8fda-4be5-bfcd-dca84bce9a9d",
+    "name": "KPA Form Local API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Postman collection to test FastAPI backend for KPA form data"
+  },
+  "item": [
+    {
+      "name": "Bogie Checksheet",
+      "item": [
+        {
+          "name": "POST /api/forms/bogie-checksheet",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"formNumber\": \"BOGIE-2025-001\",\n  \"inspectionBy\": \"user_id_456\",\n  \"inspectionDate\": \"2025-07-03\",\n  \"bmbcChecksheet\": {\n    \"adjustingTube\": \"DAMAGED\",\n    \"cylinderBody\": \"WORN OUT\",\n    \"pistonTrunnion\": \"GOOD\",\n    \"plungerSpring\": \"GOOD\"\n  },\n  \"bogieChecksheet\": {\n    \"axleGuide\": \"Worn\",\n    \"bogieFrameCondition\": \"Good\",\n    \"bolster\": \"Good\",\n    \"bolsterSuspensionBracket\": \"Cracked\",\n    \"lowerSpringSeat\": \"Good\"\n  },\n  \"bogieDetails\": {\n    \"bogieNo\": \"BG1234\",\n    \"dateOfIOH\": \"2025-07-01\",\n    \"deficitComponents\": \"None\",\n    \"incomingDivAndDate\": \"NR / 2025-06-25\",\n    \"makerYearBuilt\": \"RDSO/2018\"\n  }\n}"
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/forms/bogie-checksheet",
+              "protocol": "http",
+              "host": [
+                "127.0.0.1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "forms",
+                "bogie-checksheet"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Wheel Specifications",
+      "item": [
+        {
+          "name": "POST /api/forms/wheel-specifications",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"formNumber\": \"WHEEL-2025-001\",\n  \"submittedBy\": \"user_id_123\",\n  \"submittedDate\": \"2025-07-03\",\n  \"fields\": {\n    \"condemningDia\": \"825 (800-900)\",\n    \"lastShopIssueSize\": \"837 (800-900)\",\n    \"treadDiameterNew\": \"915 (900-1000)\",\n    \"wheelGauge\": \"1600 (+2,-1)\"\n  }\n}"
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/forms/wheel-specifications",
+              "protocol": "http",
+              "host": [
+                "127.0.0.1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "forms",
+                "wheel-specifications"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET /api/forms/wheel-specifications",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/forms/wheel-specifications?formNumber=WHEEL-2025-001&submittedBy=user_id_123&submittedDate=2025-07-03",
+              "protocol": "http",
+              "host": [
+                "127.0.0.1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "forms",
+                "wheel-specifications"
+              ],
+              "query": [
+                {
+                  "key": "formNumber",
+                  "value": "WHEEL-2025-001"
+                },
+                {
+                  "key": "submittedBy",
+                  "value": "user_id_123"
+                },
+                {
+                  "key": "submittedDate",
+                  "value": "2025-07-03"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
